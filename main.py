@@ -57,7 +57,7 @@ def shortest_paths(graph,starting,txtfile):
     else:
         f.write("No possible route can be found!")
     f.close()
-
+    routes.clear()
 # Find the available paths
 def find_paths(node, cities, path, distance):
     # add the starting city to the path
@@ -102,7 +102,6 @@ six_cg = {
     'Singapore':{'Jakarta': 50, 'Kathmandu': 177,  'Seoul': 195,'Tokyo':89,'Spokane':210}
 }
 shortest_paths(five_cg,"Spokane","K5.txt")
-routes = []
 shortest_paths(six_cg,"Spokane","K6.txt")
 # permutation example with no complete graph
 # Technically, this will still run in (n-1)!
@@ -137,7 +136,7 @@ instructions.grid(columnspan=3, column=0, row=1)
 K5 = tk.StringVar()
 K5_btn = tk.Button(root, textvariable=K5, command=lambda:drawK5(five_cg), font="Raleway", bg="#20bebe", fg="white", height=2, width=10)
 K5.set("K5")
-K5_btn.place(x=275,y=430)
+K5_btn.place(x=250,y=430)
 K6 = tk.StringVar()
 K6_btn = tk.Button(root, textvariable=K6, command=lambda:drawK6(six_cg), font="Raleway", bg="#20bebe", fg="white", height=2, width=10)
 K6.set("K6")
@@ -145,7 +144,7 @@ K6_btn.place(x=375,y=430)
 
 root.mainloop(0)
 
-# drawgraph(five_cg)
+
 
 
 
