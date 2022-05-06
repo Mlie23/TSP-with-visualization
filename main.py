@@ -3,12 +3,14 @@ import matplotlib.pyplot as plt
 import timeit 
 import tkinter as tk
 from PIL import Image,ImageTk
+
 # Global variable for routes
 routes = []
-
+count = True
 # Create a drawgraph function
 def drawK5(graph):
-    plt.figure(1)
+    if count == True:
+        plt.figure(1)
     G = nx.Graph()
     for city in graph:
         adjacency = list(graph[city].keys())
